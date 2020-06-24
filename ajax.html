@@ -1,12 +1,25 @@
-<button class="btn-json" style="background-color: rgb(219, 113, 113)">json parse</button>
-<button class="btn-txt" style="background-color: rgb(80, 182, 76)">txt parse</button>
-<button class="btn-html" style="background-color: rgb(82, 34, 194) ; color: white" >html parse</button>
+
+
 <div class="container">
-    
-    <table class="table" border = "1" bordercolor = "green" bgcolor = "pink" ></table>
+    <div class="aaa">
+            <button class="btn-json" style="background-color: rgb(219, 113, 113)">json parse</button>
+            <button class="btn-txt" style="background-color: rgb(80, 182, 76)">txt parse</button>
+            <button class="btn-html" style="background-color: rgb(82, 34, 194) ; color: white" >html parse</button>
+            <button class="btn-js" style="background-color: rgb(233, 212, 28) ; color: black" >js parse</button>
+            <table class="table" border = "1" bordercolor = "green" bgcolor = "pink" ></table>
+            <div class="show-txt"></div>
+            <div class="show-html"></div>
+            <div class="show-js"></div>
+    </div>
 </div>
-<div class="show-txt"></div>
-<div class="show-html"></div>
+
+<style>
+.aaa{
+    display: flex;
+    background-color: aqua
+}
+
+</style>
 
 <script>
 
@@ -24,8 +37,15 @@
         xhttp.send();
         console.log('asher');
     }
+
     let myTable = document.querySelector(".table")
     let btnJson = document.querySelector(".btn-json")
+    let btnTxt = document.querySelector(".btn-txt")
+    let showTxt = document.querySelector(".show-txt")
+    let btnHtml = document.querySelector(".btn-html")
+    let showHtml = document.querySelector(".show-html")
+    let btnJs = document.querySelector(".btn-js")
+    let showJs = document.querySelector(".show-js")
 
     btnJson.onclick = function(){
         loadDocJson(
@@ -51,13 +71,7 @@
             });
     }
 
-    let btnTxt = document.querySelector(".btn-txt")
-    let showTxt = document.querySelector(".show-txt")
-    let btnHtml = document.querySelector(".btn-html")
-    let showHtml = document.querySelector(".show-html")
-     
-    
-
+   
     function loadDoc(url, teagetEl) {
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -75,9 +89,13 @@
 
         btnHtml.onclick = function(){ loadDoc(
         "https://raw.githubusercontent.com/AsherLecover/DB-ajax/master/index.html", showHtml)}
+
+        btnJs.onclick = function(){ loadDoc(
+        "https://raw.githubusercontent.com/AsherLecover/DB-ajax/master/db.js", showJs)}
         
     
 
+        
     
 
     
